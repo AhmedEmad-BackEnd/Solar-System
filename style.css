@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body
+{
+
+    background:url(stars1.png), linear-gradient(to right, #01022d, #000);
+    background-size: cover, auto; 
+    background-repeat: repeat,no-repeat;
+    background-attachment: fixed; 
+    overflow: hidden;
+    
+
+    animation: moveStars 100s linear infinite;
+
+    width: 100%;
+    height: 100vh;
+}
+@keyframes moveStars {
+    from {
+        background-position: 0 0, 0 0;
+    }
+    to {
+        background-position: 1000px 1000px, 0 0;
+    }
+}
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ul
+{
+    text-align: center;
+}
+li{
+    list-style: none;
+    margin: 20px 0;
+}
+ul li a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500px;
+    letter-spacing: 4px;
+    background: darkblue;
+    padding: 6px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    width: 120px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+}
+ul:hover li a
+{
+    opacity: 0;
+}
+ul li a:hover
+{
+    background: rgb(241, 183, 183);
+    color: black;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.5);
+    opacity: 1;
+}
+ul li::after
+{
+    content: attr(data-text);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 900px;
+    text-transform: uppercase;
+    opacity: 0;
+    letter-spacing: 50px;
+    pointer-events: none;
+    transition: .6s ease-in-out;
+}
+ul li:hover:after
+{
+    opacity: 0.5;
+    letter-spacing: 5px;
+}
+ul li::before
+{
+    content: ' ';
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    position: absolute;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, 75%);
+    border-radius: 50%;
+    box-shadow: 0 0 80px orangered;
+    opacity: 0;
+}
+ul li:hover::before
+{
+    opacity: 0.7;
+    animation: animate 1s ease-in-out ;
+}
+@keyframes animate {
+    0% {
+        transform: translate(-50%, 75%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, 75%) scale(1.5);
+    }
+    100% {
+        transform: translate(-50%, 75%) scale(1);
+    }
+}
+@media (max-width: 600px) {
+   ul{
+    flex-direction: column;
+    gap: 20px;
+    }
+}
+.shooting-star
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10px; height: 10px;
+    background: white;
+    border-radius: 50%; box-shadow: 0 0 10px white , 0 0 20px white, 0 0 30px white;
+    animation: shooting 4s linear infinite;
+    opacity: 0;
+    z-index: 999;
+}
+@keyframes shooting
+{
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, -100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
