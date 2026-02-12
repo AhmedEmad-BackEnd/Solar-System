@@ -14,7 +14,7 @@ An interactive web experience that brings the cosmos to your browser. Explore th
 - **CSS3:** Advanced animations, Flexbox, and Glassmorphism.
 
 ## 🌐 Live Demo
-Check out the live project here: [[](https://solar-systeSolar-Systemm152006.netlify.app/)]
+Check out the live project here: [[Solar-System](https://solar-systeSolar-Systemm152006.netlify.app/)]
 
 
 ---
